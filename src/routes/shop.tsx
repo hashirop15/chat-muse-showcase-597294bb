@@ -42,14 +42,16 @@ export const Route = createFileRoute("/shop")({
 });
 
 function Shop() {
-  const { filter } = Route.useSearch();
+  const search = Route.useSearch();
+  const filter: FilterId = search.filter ?? "all";
   const navigate = useNavigate({ from: "/shop" });
 
   const list = useMemo(() => {
     if (filter === "all") return products;
     if (filter === "tees" || filter === "denim")
       return products.filter((p) => p.category === filter);
-    return products.filter((p) => p.tags.includes(filter));
+    const tag = filter;
+    return products.filter((p) => p.tags.includes(tag));
   }, [filter]);
 
   return (
