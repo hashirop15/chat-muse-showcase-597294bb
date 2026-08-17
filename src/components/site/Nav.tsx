@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import { useCart } from "@/lib/cart";
 
 const links = [
-  { to: "/", label: "Home", search: undefined },
-  { to: "/shop", label: "Shop", search: { filter: "all" as const } },
-  { to: "/shop", label: "T-Shirts", search: { filter: "tees" as const } },
-  { to: "/shop", label: "Baggy Denim", search: { filter: "denim" as const } },
-];
+  { label: "Shop", search: {} },
+  { label: "T-Shirts", search: { filter: "tees" } },
+  { label: "Baggy Denim", search: { filter: "denim" } },
+] as const;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
