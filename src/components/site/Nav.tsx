@@ -76,10 +76,13 @@ export function Nav() {
       {open && (
         <div className="border-t border-border bg-background px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5">
+            <Link to="/" onClick={() => setOpen(false)} className="display text-3xl">
+              Home
+            </Link>
             {links.map((l) => (
               <Link
                 key={l.label}
-                to={l.to}
+                to="/shop"
                 search={l.search}
                 onClick={() => setOpen(false)}
                 className="display text-3xl"
