@@ -3,6 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { ProductCard } from "@/components/site/ProductCard";
+import { CartDrawer } from "@/components/site/CartDrawer";
 import { products } from "@/lib/products";
 import editorial from "@/assets/editorial.jpg";
 import texture from "@/assets/texture.jpg";
