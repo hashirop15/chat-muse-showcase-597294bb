@@ -6,6 +6,8 @@ import acidGrayFront from "@/assets/acid-gray-t-shirt-front.png.asset.json";
 import acidGrayBack from "@/assets/acid-gray-t-shirt-back-side.png.asset.json";
 import baggyFront from "@/assets/gray-baggy.png.asset.json";
 import baggyBack from "@/assets/gray-jean-back-side.jpg.asset.json";
+import blueBaggyFront from "@/assets/blue-wide-leg-baggy-front.png.asset.json";
+import blueBaggyBack from "@/assets/blue-wide-leg-baggy-back.png.asset.json";
 
 export type Product = {
   id: string;
@@ -71,6 +73,19 @@ export const products: Product[] = [
     detail: "Wide leg, faded black denim",
     description:
       "Wide-leg baggy denim in faded black with whiskering at the hip and a deep rise.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "blue-wide-leg-baggy-jean",
+    name: "Blue Wide Leg Baggy Jean",
+    price: 134,
+    category: "denim",
+    image: blueBaggyFront.url,
+    hoverImage: blueBaggyBack.url,
+    tags: ["top", "new"],
+    detail: "Mid-blue wash, monogram weave",
+    description:
+      "Mid-blue washed denim with a tonal monogram weave, wide straight legs and a high rise. Whiskering at the hip, contrast stitch, and darker pocket facings on the back.",
     sizes: ["28", "30", "32", "34", "36"],
   },
 ];
