@@ -47,7 +47,7 @@ function ProductPage() {
 
         <div className="mt-8 grid gap-12 md:grid-cols-2">
           <div>
-            <div className="bg-secondary">
+            <div className="bg-black">
               <img
                 src={active}
                 alt={product.name}
@@ -62,7 +62,7 @@ function ProductPage() {
                   key={src}
                   type="button"
                   onClick={() => setActive(src)}
-                  className={`w-20 border bg-secondary ${
+                  className={`w-20 border bg-black ${
                     active === src ? "border-primary" : "border-border"
                   }`}
                 >
