@@ -54,7 +54,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       open,
       setOpen,
       add: (product, size) => {
-        const s = size ?? product.sizes[0];
+        const s = size ?? product.sizes[0] ?? "OS";
         setItems((prev) => {
           const k = `${product.id}::${s}`;
           const found = prev.find((i) => keyOf(i) === k);
