@@ -17,9 +17,9 @@ const filters = [
 type FilterId = (typeof filters)[number]["id"];
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (search: Record<string, unknown>): { filter: FilterId } => {
+  validateSearch: (search: Record<string, unknown>): { filter?: FilterId } => {
     const f = String(search["filter"] ?? "all") as FilterId;
-    return { filter: filters.some((x) => x.id === f) ? f : "all" };
+    return filters.some((x) => x.id === f) && f !== "all" ? { filter: f } : {};
   },
   head: () => ({
     meta: [
