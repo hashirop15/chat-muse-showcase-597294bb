@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import type { Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 
@@ -8,7 +9,11 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group">
-      <div className="relative overflow-hidden bg-secondary">
+      <Link
+        to="/product/$id"
+        params={{ id: product.id }}
+        className="relative block overflow-hidden bg-secondary"
+      >
         <img
           src={product.image}
           alt={product.name}
@@ -29,11 +34,15 @@ export function ProductCard({ product }: { product: Product }) {
             New
           </span>
         )}
-      </div>
+      </Link>
 
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-sm">{product.name}</h3>
+          <h3 className="text-sm">
+            <Link to="/product/$id" params={{ id: product.id }} className="link-underline">
+              {product.name}
+            </Link>
+          </h3>
           <p className="mt-1 text-xs text-muted-foreground">{product.detail}</p>
         </div>
         <p className="text-sm tabular-nums">${product.price}</p>

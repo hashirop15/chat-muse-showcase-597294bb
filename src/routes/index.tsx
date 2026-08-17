@@ -5,8 +5,7 @@ import { HeroSlider } from "@/components/site/HeroSlider";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { products } from "@/lib/products";
-import editorial from "@/assets/editorial.jpg";
-import texture from "@/assets/texture.jpg";
+import ferrariBack from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt---copy.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,12 +113,12 @@ function Home() {
 
         <section className="grid items-stretch md:grid-cols-2">
           <img
-            src={editorial}
-            alt="Model in an oversized tee and baggy jeans in a sunlit room"
+            src={ferrariBack.url}
+            alt="Formula 1 Ferrari acid wash drop shoulder t-shirt, back graphic"
             loading="lazy"
             width={1400}
-            height={1000}
-            className="h-full min-h-[420px] w-full object-cover"
+            height={1400}
+            className="h-full min-h-[420px] w-full bg-secondary object-contain"
           />
           <div className="flex flex-col justify-center bg-primary px-8 py-20 text-primary-foreground md:px-16">
             <p className="eyebrow" style={{ color: "var(--sand)" }}>
@@ -139,36 +138,6 @@ function Home() {
             >
               Shop now
             </Link>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
-          <div className="grid gap-14 md:grid-cols-2 md:items-center">
-            <div>
-              <p className="eyebrow">Material study</p>
-              <h2 className="display mt-3 text-5xl md:text-6xl">The cloth, up close</h2>
-              <dl className="mt-10 divide-y divide-border border-y border-border">
-                {[
-                  ["Weight", "290 GSM combed cotton jersey"],
-                  ["Denim", "14oz selvedge, unsanforized"],
-                  ["Dye", "Earth pigment, low water"],
-                  ["Fit", "Boxy tee, wide-leg jean"],
-                ].map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-8 py-4 text-sm">
-                    <dt className="text-muted-foreground">{k}</dt>
-                    <dd className="text-right">{v}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <img
-              src={texture}
-              alt="Close-up of woven cotton fabric"
-              loading="lazy"
-              width={1400}
-              height={1000}
-              className="aspect-[4/3] w-full object-cover"
-            />
           </div>
         </section>
 
