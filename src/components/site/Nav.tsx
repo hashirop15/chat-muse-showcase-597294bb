@@ -32,10 +32,13 @@ export function Nav() {
         </Link>
 
         <div className="hidden items-center gap-9 md:flex">
+          <Link to="/" className="link-underline text-xs uppercase tracking-[0.2em]">
+            Home
+          </Link>
           {links.map((l) => (
             <Link
               key={l.label}
-              to={l.to}
+              to="/shop"
               search={l.search}
               className="link-underline text-xs uppercase tracking-[0.2em]"
             >
