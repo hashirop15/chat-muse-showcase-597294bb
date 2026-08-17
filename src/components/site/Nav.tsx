@@ -1,14 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useCart } from "@/lib/cart";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/shop", label: "Shop" },
-];
+  { label: "Shop", search: {} },
+  { label: "T-Shirts", search: { filter: "tees" } },
+  { label: "Baggy Denim", search: { filter: "denim" } },
+] as const;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { count, setOpen: setCartOpen } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -28,44 +31,59 @@ export function Nav() {
           TERRA&nbsp;DENIM
         </Link>
 
-        <div className="hidden items-center gap-10 md:flex">
+        <div className="hidden items-center gap-9 md:flex">
+          <Link to="/" className="link-underline text-xs uppercase tracking-[0.2em]">
+            Home
+          </Link>
           {links.map((l) => (
             <Link
-              key={l.to}
-              to={l.to}
+              key={l.label}
+              to="/shop"
+              search={l.search}
               className="link-underline text-xs uppercase tracking-[0.2em]"
             >
               {l.label}
             </Link>
           ))}
-          <a href="#journal" className="link-underline text-xs uppercase tracking-[0.2em]">
-            Journal
-          </a>
-          <Link
-            to="/shop"
+          <button
+            type="button"
+            onClick={() => setCartOpen(true)}
             className="rounded-full bg-primary px-5 py-2 text-xs uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-85"
           >
-            Cart (0)
-          </Link>
+            Cart ({count})
+          </button>
         </div>
 
-        <button
-          type="button"
-          aria-label="Menu"
-          onClick={() => setOpen((v) => !v)}
-          className="text-xs uppercase tracking-[0.2em] md:hidden"
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            type="button"
+            onClick={() => setCartOpen(true)}
+            className="rounded-full bg-primary px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-primary-foreground"
+          >
+            Cart ({count})
+          </button>
+          <button
+            type="button"
+            aria-label="Menu"
+            onClick={() => setOpen((v) => !v)}
+            className="text-xs uppercase tracking-[0.2em]"
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
       </nav>
 
       {open && (
         <div className="border-t border-border bg-background px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5">
+            <Link to="/" onClick={() => setOpen(false)} className="display text-3xl">
+              Home
+            </Link>
             {links.map((l) => (
               <Link
-                key={l.to}
-                to={l.to}
+                key={l.label}
+                to="/shop"
+                search={l.search}
                 onClick={() => setOpen(false)}
                 className="display text-3xl"
               >

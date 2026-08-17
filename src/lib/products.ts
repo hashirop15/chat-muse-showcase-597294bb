@@ -1,11 +1,11 @@
-import t1 from "@/assets/t1.jpg";
-import t2 from "@/assets/t2.jpg";
-import j1 from "@/assets/j1.jpg";
-import j2 from "@/assets/j2.jpg";
-import hero1 from "@/assets/hero1.jpg";
-import hero2 from "@/assets/hero2.jpg";
-import hero3 from "@/assets/hero3.jpg";
-import editorial from "@/assets/editorial.jpg";
+import ferrariFront from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt.png.asset.json";
+import ferrariBack from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt---copy.png.asset.json";
+import acidBlueFront from "@/assets/acid-blue-shirt-front.png.asset.json";
+import acidBlueBoth from "@/assets/chatgpt-image-aug-16-2026-04-09-15-am.png.asset.json";
+import acidGrayFront from "@/assets/acid-gray-t-shirt-front.png.asset.json";
+import acidGrayBack from "@/assets/acid-gray-t-shirt-back-side.png.asset.json";
+import baggyFront from "@/assets/gray-baggy.png.asset.json";
+import baggyBack from "@/assets/gray-jean-back-side.jpg.asset.json";
 
 export type Product = {
   id: string;
@@ -13,102 +13,85 @@ export type Product = {
   price: number;
   category: "tees" | "denim";
   image: string;
+  hoverImage: string;
   tags: ("top" | "new")[];
   detail: string;
+  description: string;
+  sizes: string[];
 };
 
 export const products: Product[] = [
   {
-    id: "bone-heavyweight-tee",
-    name: "Bone Heavyweight Tee",
-    price: 48,
+    id: "ferrari-acid-wash-tee",
+    name: "Formula 1 Ferrari Acid Wash Tee",
+    price: 59,
     category: "tees",
-    image: t1,
-    tags: ["top"],
-    detail: "290 GSM boxy cotton",
+    image: ferrariFront.url,
+    hoverImage: ferrariBack.url,
+    tags: ["top", "new"],
+    detail: "Acid wash, drop shoulder",
+    description:
+      "Heavyweight acid-washed cotton with a drop shoulder cut. Front Scuderia print, full back graphic.",
+    sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "washed-black-tee",
-    name: "Washed Black Tee",
+    id: "acid-blue-oversized-tee",
+    name: "Acid Blue Oversized Tee",
     price: 52,
     category: "tees",
-    image: t2,
-    tags: ["top", "new"],
-    detail: "Garment dyed, dropped shoulder",
+    image: acidBlueFront.url,
+    hoverImage: acidBlueBoth.url,
+    tags: ["top"],
+    detail: "Indigo acid wash, boxy fit",
+    description:
+      "Boxy 280 GSM cotton dyed in an indigo acid wash — no two pieces come out the same.",
+    sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "sun-wash-baggy",
-    name: "Sun-Wash Baggy Jean",
+    id: "acid-gray-oversized-tee",
+    name: "Acid Gray Oversized Tee",
+    price: 49,
+    category: "tees",
+    image: acidGrayFront.url,
+    hoverImage: acidGrayBack.url,
+    tags: ["new"],
+    detail: "Washed charcoal, dropped shoulder",
+    description:
+      "Washed charcoal jersey with a mineral finish and reinforced ribbed collar.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "washed-black-baggy-jean",
+    name: "Washed Black Baggy Jean",
     price: 128,
     category: "denim",
-    image: j1,
-    tags: ["top"],
-    detail: "Wide leg, 14oz selvedge",
-  },
-  {
-    id: "raw-indigo-baggy",
-    name: "Raw Indigo Baggy Jean",
-    price: 134,
-    category: "denim",
-    image: j2,
-    tags: ["new"],
-    detail: "Unwashed indigo, relaxed rise",
-  },
-  {
-    id: "clay-boxy-tee",
-    name: "Clay Boxy Tee",
-    price: 48,
-    category: "tees",
-    image: hero3,
-    tags: ["new"],
-    detail: "Earth pigment dye",
-  },
-  {
-    id: "field-tee",
-    name: "Field Tee",
-    price: 54,
-    category: "tees",
-    image: hero2,
-    tags: ["top"],
-    detail: "Organic jersey, arch print",
-  },
-  {
-    id: "studio-baggy",
-    name: "Studio Baggy Jean",
-    price: 138,
-    category: "denim",
-    image: hero1,
-    tags: [],
-    detail: "Column fit, stone wash",
-  },
-  {
-    id: "linen-room-tee",
-    name: "Linen Room Tee",
-    price: 46,
-    category: "tees",
-    image: editorial,
-    tags: ["new"],
-    detail: "Cotton-linen blend",
+    image: baggyFront.url,
+    hoverImage: baggyBack.url,
+    tags: ["top", "new"],
+    detail: "Wide leg, faded black denim",
+    description:
+      "Wide-leg baggy denim in faded black with whiskering at the hip and a deep rise.",
+    sizes: ["28", "30", "32", "34", "36"],
   },
 ];
 
 export const slides = [
   {
-    image: hero1,
+    image: ferrariBack.url,
     eyebrow: "Top rated — 01",
-    title: "Heavyweight, honestly cut",
-    copy: "The 290 GSM tee that holds its shape after every wash.",
+    title: "Acid wash, race cut",
+    copy: "The Ferrari drop-shoulder tee — heavyweight cotton, full back graphic.",
   },
   {
-    image: hero2,
+    image: baggyFront.url,
     eyebrow: "Top rated — 02",
     title: "Baggy, the way it should fall",
-    copy: "Wide legs, deep rise, denim woven to break in with you.",
+    copy: "Wide legs, deep rise, faded black denim built to break in with you.",
   },
   {
-    image: hero3,
+    image: acidBlueFront.url,
     eyebrow: "Top rated — 03",
-    title: "Earth pigment studies",
-    copy: "Clay, bone and indigo — dyed in small runs, never repeated.",
+    title: "Indigo acid studies",
+    copy: "Every tee washed in small runs — no two ever come out the same.",
   },
 ];
