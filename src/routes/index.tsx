@@ -65,22 +65,49 @@ function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
+        <section
+          id="t-shirts"
+          className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32"
+        >
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="eyebrow">The collection</p>
-              <h2 className="display mt-3 text-5xl md:text-7xl">Tees &amp; baggy denim</h2>
+              <h2 className="display mt-3 text-5xl md:text-7xl">T-Shirts</h2>
             </div>
-            <Link to="/shop" className="link-underline text-xs uppercase tracking-[0.2em]">
-              View all
+            <Link
+              to="/shop"
+              search={{ filter: "tees" }}
+              className="link-underline text-xs uppercase tracking-[0.2em]"
+            >
+              View all tees
             </Link>
           </div>
 
           <div className="mt-14 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((p) => (
-              <Link key={p.id} to="/shop">
-                <ProductCard product={p} />
-              </Link>
+            {tees.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1400px] px-6 pb-24 md:px-10 md:pb-32">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">The collection</p>
+              <h2 className="display mt-3 text-5xl md:text-7xl">Baggy denim</h2>
+            </div>
+            <Link
+              to="/shop"
+              search={{ filter: "denim" }}
+              className="link-underline text-xs uppercase tracking-[0.2em]"
+            >
+              View all denim
+            </Link>
+          </div>
+
+          <div className="mt-14 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+            {denim.map((p) => (
+              <ProductCard key={p.id} product={p} />
             ))}
           </div>
         </section>
