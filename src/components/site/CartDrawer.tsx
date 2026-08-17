@@ -47,7 +47,7 @@ export function CartDrawer() {
                     <img
                       src={i.image}
                       alt={i.name}
-                      className="h-28 w-24 shrink-0 bg-black object-contain"
+                      className="h-28 w-24 shrink-0 bg-secondary object-cover"
                     />
                     <div className="flex flex-1 flex-col">
                       <div className="flex justify-between gap-3">
