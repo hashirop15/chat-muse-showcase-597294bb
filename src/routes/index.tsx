@@ -38,11 +38,13 @@ const marquee = [
 ];
 
 function Home() {
-  const featured = products.slice(0, 4);
+  const tees = products.filter((p) => p.category === "tees");
+  const denim = products.filter((p) => p.category === "denim");
 
   return (
     <div className="min-h-screen">
       <Nav />
+      <CartDrawer />
       <main>
         <HeroSlider />
 
