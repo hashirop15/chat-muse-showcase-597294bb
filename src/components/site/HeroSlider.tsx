@@ -48,7 +48,7 @@ export function HeroSlider() {
       {slides.map((s, i) => (
         <div
           key={s.title}
-          className={`absolute inset-0 transition-opacity duration-[1200ms] ${
+          className={`absolute inset-0 bg-black transition-opacity duration-[1200ms] ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden={i !== index}
@@ -59,7 +59,7 @@ export function HeroSlider() {
             width={1600}
             height={1100}
             {...(i === 0 ? {} : { loading: "lazy" as const })}
-            className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-linear ${
+            className={`h-full w-full bg-black object-contain transition-transform duration-[7000ms] ease-linear ${
               i === index ? "scale-105" : "scale-100"
             }`}
           />
