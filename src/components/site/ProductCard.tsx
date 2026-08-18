@@ -12,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
       <Link
         to="/product/$id"
         params={{ id: product.id }}
-        className="relative block overflow-hidden bg-secondary"
+        className="relative block overflow-hidden bg-secondary p-3"
       >
         <img
           src={product.image}
@@ -20,14 +20,14 @@ export function ProductCard({ product }: { product: Product }) {
           loading="lazy"
           width={1000}
           height={1300}
-          className="aspect-[4/5] w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+          className="aspect-[3/4] w-full object-contain transition-opacity duration-500 group-hover:opacity-0"
         />
         <img
           src={product.hoverImage}
           alt={`${product.name} — alternate view`}
           loading="lazy"
           aria-hidden="true"
-          className="absolute inset-0 aspect-[4/5] h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="absolute inset-0 h-full w-full object-contain p-3 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
         {product.tags.includes("new") && (
           <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em]">

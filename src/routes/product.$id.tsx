@@ -47,13 +47,13 @@ function ProductPage() {
 
         <div className="mt-8 grid gap-12 md:grid-cols-2">
           <div>
-            <div className="bg-secondary">
+            <div className="bg-secondary p-4">
               <img
                 src={active}
                 alt={product.name}
                 width={1000}
                 height={1300}
-                className="aspect-[4/5] w-full object-contain"
+                className="mx-auto aspect-[3/4] w-full max-w-[520px] object-contain"
               />
             </div>
             <div className="mt-4 flex gap-3">
