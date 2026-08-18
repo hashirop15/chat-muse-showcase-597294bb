@@ -39,7 +39,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative h-[92vh] min-h-[620px] w-full select-none overflow-hidden md:h-screen"
+      className="relative h-[92vh] min-h-[620px] w-full select-none overflow-hidden md:h-[88vh] md:min-h-[700px]"
       onPointerDown={(e) => onDown(e.clientX)}
       onPointerUp={(e) => onUp(e.clientX)}
       onTouchStart={(e) => onDown(e.touches[0]?.clientX ?? 0)}
@@ -59,8 +59,8 @@ export function HeroSlider() {
             width={1600}
             height={1100}
             {...(i === 0 ? {} : { loading: "lazy" as const })}
-            className={`h-full w-full bg-black object-contain transition-transform duration-[7000ms] ease-linear ${
-              i === index ? "scale-105" : "scale-100"
+            className={`h-full w-full bg-black object-contain object-center py-4 transition-transform duration-[7000ms] ease-linear md:object-right md:py-10 md:pr-10 ${
+              i === index ? "scale-[1.02]" : "scale-100"
             }`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/25" />
