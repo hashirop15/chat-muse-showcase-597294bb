@@ -47,13 +47,13 @@ function ProductPage() {
 
         <div className="mt-8 grid gap-12 md:grid-cols-2">
           <div>
-            <div className="bg-secondary p-4">
+            <div className="overflow-hidden bg-black">
               <img
                 src={active}
                 alt={product.name}
                 width={1000}
                 height={1300}
-                className="mx-auto aspect-[3/4] w-full max-w-[520px] object-contain"
+                className="mx-auto aspect-[3/4] w-full scale-105 object-cover object-center"
               />
             </div>
             <div className="mt-4 flex gap-3">
@@ -62,11 +62,11 @@ function ProductPage() {
                   key={src}
                   type="button"
                   onClick={() => setActive(src)}
-                  className={`w-20 border bg-secondary ${
+                  className={`w-20 overflow-hidden border bg-black ${
                     active === src ? "border-primary" : "border-border"
                   }`}
                 >
-                  <img src={src} alt="" className="aspect-[4/5] w-full object-contain" />
+                  <img src={src} alt="" className="aspect-[4/5] w-full object-cover object-center" />
                 </button>
               ))}
             </div>
