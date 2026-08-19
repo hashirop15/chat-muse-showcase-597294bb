@@ -56,10 +56,10 @@ export function HeroSlider() {
           <img
             src={s.image}
             alt={s.title}
-            width={1600}
-            height={1100}
+            width={1920}
+            height={1080}
             {...(i === 0 ? {} : { loading: "lazy" as const })}
-            className={`h-full w-full bg-black object-contain object-center py-4 transition-transform duration-[7000ms] ease-linear md:object-right md:py-10 md:pr-10 ${
+            className={`h-full w-full bg-black object-cover object-center transition-transform duration-[7000ms] ease-linear ${
               i === index ? "scale-[1.02]" : "scale-100"
             }`}
           />
