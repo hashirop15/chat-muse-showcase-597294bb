@@ -53,7 +53,7 @@ function ProductPage() {
                 alt={product.name}
                 width={1000}
                 height={1300}
-                className="mx-auto aspect-[3/4] w-full scale-105 object-cover object-center"
+                className="aspect-[3/4] w-full object-cover object-center"
               />
             </div>
             <div className="mt-4 flex gap-3">
@@ -66,7 +66,7 @@ function ProductPage() {
                     active === src ? "border-primary" : "border-border"
                   }`}
                 >
-                  <img src={src} alt="" className="aspect-[4/5] w-full object-cover object-center" />
+                  <img src={src} alt="" className="aspect-[3/4] w-full object-cover object-center" />
                 </button>
               ))}
             </div>

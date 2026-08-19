@@ -5,7 +5,7 @@ import { HeroSlider } from "@/components/site/HeroSlider";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { products } from "@/lib/products";
-import ferrariBack from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt---copy.png.asset.json";
+import ferrariBack from "@/assets/ferrari-back-card.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -118,7 +118,7 @@ function Home() {
             loading="lazy"
             width={1400}
             height={1400}
-            className="h-full min-h-[420px] w-full bg-secondary object-contain"
+            className="h-full min-h-[420px] w-full bg-black object-cover object-center"
           />
           <div className="flex flex-col justify-center bg-primary px-8 py-20 text-primary-foreground md:px-16">
             <p className="eyebrow" style={{ color: "var(--sand)" }}>

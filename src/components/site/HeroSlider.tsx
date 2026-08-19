@@ -55,11 +55,17 @@ export function HeroSlider() {
         >
           <img
             src={s.image}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-70 blur-2xl"
+          />
+          <img
+            src={s.image}
             alt={s.title}
-            width={1600}
-            height={1100}
+            width={1920}
+            height={1080}
             {...(i === 0 ? {} : { loading: "lazy" as const })}
-            className={`h-full w-full bg-black object-contain object-center py-4 transition-transform duration-[7000ms] ease-linear md:object-right md:py-10 md:pr-10 ${
+            className={`relative h-full w-full object-contain object-center transition-transform duration-[7000ms] ease-linear ${
               i === index ? "scale-[1.02]" : "scale-100"
             }`}
           />
