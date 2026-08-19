@@ -1,13 +1,16 @@
-import ferrariFront from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt.png.asset.json";
-import ferrariBack from "@/assets/formula-1-ferrari-acid-wash-drop-shoulder-t-shirt---copy.png.asset.json";
-import acidBlueFront from "@/assets/acid-blue-shirt-front.png.asset.json";
-import acidBlueBoth from "@/assets/chatgpt-image-aug-16-2026-04-09-15-am.png.asset.json";
-import acidGrayFront from "@/assets/acid-gray-t-shirt-front.png.asset.json";
-import acidGrayBack from "@/assets/acid-gray-t-shirt-back-side.png.asset.json";
-import baggyFront from "@/assets/gray-baggy.png.asset.json";
-import baggyBack from "@/assets/gray-jean-back-side.jpg.asset.json";
-import blueBaggyFront from "@/assets/blue-wide-leg-baggy-front.png.asset.json";
-import blueBaggyBack from "@/assets/blue-wide-leg-baggy-back.png.asset.json";
+import ferrariFront from "@/assets/ferrari-front-card.jpg.asset.json";
+import ferrariBack from "@/assets/ferrari-back-card.jpg.asset.json";
+import acidBlueFront from "@/assets/acid-blue-front-card.jpg.asset.json";
+import acidBlueBoth from "@/assets/acid-blue-back-card.jpg.asset.json";
+import acidGrayFront from "@/assets/acid-gray-front-card.jpg.asset.json";
+import acidGrayBack from "@/assets/acid-gray-back-card.jpg.asset.json";
+import baggyFront from "@/assets/black-baggy-front-card.jpg.asset.json";
+import baggyBack from "@/assets/black-baggy-back-card.jpg.asset.json";
+import blueBaggyFront from "@/assets/blue-baggy-front-card.jpg.asset.json";
+import blueBaggyBack from "@/assets/blue-baggy-back-card.jpg.asset.json";
+import heroFerrari from "@/assets/hero-ferrari.jpg.asset.json";
+import heroBlackBaggy from "@/assets/hero-black-baggy.jpg.asset.json";
+import heroAcidBlue from "@/assets/hero-acid-blue.jpg.asset.json";
 
 export type Product = {
   id: string;
@@ -92,19 +95,19 @@ export const products: Product[] = [
 
 export const slides = [
   {
-    image: ferrariBack.url,
+    image: heroFerrari.url,
     eyebrow: "Top rated — 01",
     title: "Acid wash, race cut",
     copy: "The Ferrari drop-shoulder tee — heavyweight cotton, full back graphic.",
   },
   {
-    image: baggyFront.url,
+    image: heroBlackBaggy.url,
     eyebrow: "Top rated — 02",
     title: "Baggy, the way it should fall",
     copy: "Wide legs, deep rise, faded black denim built to break in with you.",
   },
   {
-    image: acidBlueFront.url,
+    image: heroAcidBlue.url,
     eyebrow: "Top rated — 03",
     title: "Indigo acid studies",
     copy: "Every tee washed in small runs — no two ever come out the same.",
